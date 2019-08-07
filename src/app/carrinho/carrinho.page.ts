@@ -5,7 +5,7 @@ import { Pedido } from '../model/pedido';
 import { Router } from '@angular/router';
 import { PratoVegano } from '../model/pratovegano';
 import { PratoVegetariano } from '../model/pratovegetariano';
-import { Promocao } from '../model/promocao';
+
 import { Modal } from '../model/modal';
 import * as firebase from 'firebase';
 
@@ -59,11 +59,7 @@ export class CarrinhoPage implements OnInit {
     this.pedido = this.storageServ.getCart();
 
   }
-  removeCarPromocao(promocao: Promocao) {
-    this.storageServ.setRemoveCartPromocao(promocao);
-    this.pedido = this.storageServ.getCart();
-
-  }
+ 
 
   FinalizarCompra() {
     this.router.navigate(['/finalizar-compra']);
@@ -87,10 +83,7 @@ export class CarrinhoPage implements OnInit {
     this.router.navigate(['/view-modal', { 'prato': prato.id }]);
   }
 
-  viewPromocao(promocao: Promocao) {
-    
-    this.router.navigate(['/view-modal-promocoes', { 'promocao': promocao.id }]);
-  }
+ 
  
   ViewPratoVegano(pratovegano: PratoVegano) {
     

@@ -74,18 +74,5 @@ export class StorageService {
         localStorage.setItem('carrinho', JSON.stringify(lista));
     }
   
-    setRemoveCartPromocao(promocao: Promocao) {
-        let lista: Pedido = this.getCart();
-
-        let pos = lista.itens.findIndex(
-            x => x.promocao.id == promocao.id);
-
-        if (pos != -1) { // -1 -> Não existe
-            lista.itens.splice(pos, 1);
-        }
-
-        localStorage.setItem('carrinho', JSON.stringify(lista));
-    }
-
-
+ 
 }

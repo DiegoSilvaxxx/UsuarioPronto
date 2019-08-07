@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Promocao } from '../model/promocao'
 import { StorageService } from '../service/storage.service';
 import { Pedido } from '../model/pedido';
-import { Item } from '../model/item';
+
 import { ViewChild } from '@angular/core';
 
 @Component({
@@ -38,50 +38,7 @@ export class ListaDePromocoesPage implements OnInit {
     console.log(this.ListaDePromocoes);
   }
 
-  addCarrinho(promocao: Promocao) {
-
-
-
-    this.pedido = this.storageServ.getCart();
-    let add = true;
-
-    let i = new Item();
-    i.promocao = promocao;
-    i.quantidade = 1;
-
-    if (this.pedido == null) {
-
-      this.pedido = new Pedido();
-      this.pedido.itens = [];
-
-    } else {
-
-
-      this.pedido.itens.forEach(p => {
-
-
-        if (p.promocao !== undefined) {
-
-
-          if (p.promocao.id == promocao.id) {
-            add = false;
-          }
-        }
-
-
-      });
-
-    }
-
-    if (add == true) this.pedido.itens.push(i);
-
-    this.storageServ.setCart(this.pedido);
-
-
-
-
-  }
-
+ 
   ListaDePratos() {
     this.router.navigate(['/lista-de-pratos']);
   }

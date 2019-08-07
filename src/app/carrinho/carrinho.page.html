@@ -74,27 +74,6 @@
         </ion-card>
 
 
-
-
-        <ion-card *ngIf="pedido.promocao != undefined">
-          <ion-card-header>
-            <img src="{{promocao?.imagem}}">
-            <ion-card-title class="titleconfig01">{{pedido?.promocao.nome}}</ion-card-title>
-            <ion-card-subtitle>{{pedido?.promocao.desrcicao}}</ion-card-subtitle>
-            <ion-card-subtitle>R$ {{pedido?.promocao.valor}}</ion-card-subtitle>
-
-          </ion-card-header>
-
-          <ion-button color="warning" expand="full" (click)="viewPromocao(pedido?.promocao)">+Detalhes</ion-button>
-          <ion-button color="medium"  expand="full" (click)="removeCarPromocao(pedido?.promocao)">ExcluirPedido</ion-button>
-
-        </ion-card>
-
-
-
-
-
-
       </ion-col>
 
 
